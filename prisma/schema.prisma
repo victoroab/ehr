@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Patient {
+  id                   String                 @id @default(cuid())
+  firstname            String
+  lastname             String
+  email                String?                @unique
+  phone_no             String
+  patient_no           String                 @unique
+  age                  Int
+  gender               String
+  occupation           String
+  marital_status       String
+  next_of_kin          String
+  address              String
+  createdAt            DateTime               @default(now())
+  consultation_history Consultation_history[]
+
+  @@index([patient_no])
+}
+
+model Consultation_history {
+  id            String   @id @default(cuid())
+  patient       Patient? @relation(fields: [patient_no], references: [patient_no])
+  patient_no    String   @unique
+  report        String?  @db.VarChar(500)
+  prescriptions String?  @db.VarChar(256)
+  consultant    Staff?   @relation(fields: [staff_no], references: [staff_no])
+  staff_no      String   @unique
+
+  createdAt DateTime @default(now())
+
+  @@index([patient_no, staff_no])
+}
+
+model Staff {
+  id                   String                 @id @default(cuid())
+  firstname            String
+  lastname             String
+  email                String?                @unique
+  staff_no             String                 @unique
+  phone_no             String
+  gender               String
+  createdAt            DateTime               @default(now())
+  consultation_history Consultation_history[]
+  role                 Role
+
+  @@index([staff_no])
+}
+
+enum Role {
+  DOCTOR
+  SURGEON
+  DENTIST
+  NURSE
+  RECEPTIONIST
+  PAYMENT
+  PHARMACY
+}
