@@ -9,7 +9,7 @@ const adamina = Adamina({ subsets: ['latin'], weight: '400' })
 export default function Home() {
   return (
     <main className="min-h-screen flex">
-      <div className="w-1/2 flex items-center justify-center min-h-screen border-r border-slate-430 text-slate-560 bg-gradient-to-r from-gray-300 to-gray-100">
+      <div className="w-1/2 flex items-center justify-center min-h-screen border-r">
         <span
           className={`${adamina.className} "font-semibold flex flex-col flex-wrap gap-6"`}
         >
@@ -20,7 +20,7 @@ export default function Home() {
         </span>
       </div>
       <div
-        className={`${adamina.className} w-1/2 flex items-center justify-center min-h-screen bg-gradient-to-l from-gray-200`}
+        className={`${adamina.className} w-1/2 flex items-center justify-center min-h-screen`}
       >
         <section className="w-auto h-auto p-10 border rounded-md gap-4 flex flex-col items-center justify-center">
           <Label className="text-xl font-bold mb-7">Welcome</Label>

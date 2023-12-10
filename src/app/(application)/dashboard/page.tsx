@@ -1,7 +1,6 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -13,11 +12,11 @@ export default function Page() {
   return (
     <section className="w-full min-h-full p-14">
       <div className="w-full h-full flex flex-col">
-        <div className="mb-5 pb-2 border-b border-slate-400 text-sm font-semibold">
+        <div className="mb-5 pb-2 border-b border-slate-400 text-sm font-semibold dark:border-secondary">
           Dashboard
         </div>
-        <div className="flex gap-4 items-center text-slate-800">
-          <Card className="w-1/3 h-36 bg-gray-100 hover:bg-gray-200 cursor-pointer">
+        <div className="flex gap-4 items-center text-slate-800 dark:text-secondary-foreground">
+          <Card className="w-1/3 h-36 hover:bg-primary-foreground cursor-pointer">
             <Link href={'/consultations'} className="w-1/3" prefetch={false}>
               <CardHeader>
                 <CardTitle className="text-xs font-semibold w-full flex justify-between">
@@ -31,21 +30,17 @@ export default function Page() {
             </Link>
           </Card>
 
-          <Card className="h-36 w-1/3 bg-gray-100 hover:bg-gray-200">
+          <Card className="h-36 w-1/3 hover:bg-primary-foreground">
             <CardHeader>
               <CardTitle className="text-xs font-semibold w-full flex justify-between">
-                Reports <ReaderIcon />
+                History <ReaderIcon />
               </CardTitle>
             </CardHeader>
             <CardContent className="text-sm"></CardContent>
             <CardFooter>
-              <span className="text-[0.55rem]">generate reports</span>
+              <span className="text-[0.55rem]">view history</span>
             </CardFooter>
           </Card>
-
-          {/* <Card className="h-36 w-1/3 bg-gray-100 hover:bg-gray-200">
-            <CardTitle className="text-xs font-semibold p-3"></CardTitle>
-          </Card> */}
         </div>
       </div>
     </section>

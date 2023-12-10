@@ -11,6 +11,12 @@ export async function GET(request: NextRequest) {
       select: {
         id: true,
         patient_no: true,
+        patient: {
+          select: {
+            firstname: true,
+            lastname: true
+          }
+        },
         createdAt: true,
       },
       orderBy: {
