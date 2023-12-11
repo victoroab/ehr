@@ -1,8 +1,5 @@
 import { Adamina } from 'next/font/google'
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { ArrowRightIcon } from '@radix-ui/react-icons'
+import { SignIn } from './sign-in'
 
 const adamina = Adamina({ subsets: ['latin'], weight: '400' })
 
@@ -22,19 +19,7 @@ export default function Home() {
       <div
         className={`${adamina.className} w-1/2 flex items-center justify-center min-h-screen`}
       >
-        <section className="w-auto h-auto p-10 border rounded-md gap-4 flex flex-col items-center justify-center">
-          <Label className="text-xl font-bold mb-7">Welcome</Label>
-          <span className="flex flex-col gap-4">
-            <Input placeholder="Staff No"></Input>
-            <Input placeholder="Password" type={'password'}></Input>
-            <Button>
-              <span className="flex items-center gap-3 justify-center">
-                <span>Sign In</span>
-                <ArrowRightIcon />
-              </span>
-            </Button>
-          </span>
-        </section>
+        <SignIn />
       </div>
     </main>
   )
