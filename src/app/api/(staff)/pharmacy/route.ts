@@ -1,9 +1,9 @@
 import { prisma } from '@/lib/db'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
   try {
-    const query = request.nextUrl.searchParams.get("query")!
+    const query = request.nextUrl.searchParams.get('query')!
 
     const prescription = await prisma.consultation_history.findFirst({
       where: {
@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
       },
     })
 
-    return NextResponse.json(prescription)
+    return Response.json(prescription)
   } catch (e) {
     console.log(e)
   }
