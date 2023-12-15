@@ -26,9 +26,9 @@ export function LayoutNav({ children }: { children: React.ReactNode }) {
 
   const router = useRouter()
 
-  if (session === null) {
-    redirect('/')
-  }
+  // if (session === null) {
+  //   redirect('/')
+  // }
 
   async function signOut() {
     const { error } = await supabase.auth.signOut()

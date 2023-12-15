@@ -2,7 +2,6 @@ import {
   Table,
   TableBody,
   TableCaption,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
@@ -10,7 +9,6 @@ import {
 import { ConsultationData } from './consultation-data'
 
 export default function Page() {
-  // console.log(t.slice(11, 19))
   return (
     <section className="min-h-full w-full p-14">
       <div className="w-full h-full flex flex-col">
@@ -31,17 +29,6 @@ export default function Page() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {/* <TableRow>
-              <TableCell className="font-medium">1</TableCell>
-              <TableCell className="cursor-pointer">nihiwh9msajs92</TableCell>
-              <TableCell className="cursor-pointer">pyt-9uemah9q</TableCell>
-              <TableCell>Credit Card</TableCell>
-              <TableCell>Credit Card</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-              <TableCell className="text-right">
-                <ButtonLink consultationId="kajjoal">View</ButtonLink>
-              </TableCell>
-            </TableRow> */}
             <ConsultationData />
           </TableBody>
         </Table>

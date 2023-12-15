@@ -55,7 +55,7 @@ model Staff {
   consultation_history Consultation_history[]
   role                 Role
 
-  @@index([staff_no])
+  @@index([staff_no, email])
 }
 
 enum Role {
